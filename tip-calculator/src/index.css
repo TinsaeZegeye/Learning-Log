@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    border: 1px solid #123456;
+    border-radius: 8px;
+    padding: 20px;
+    width: 55rem;
+    height: 24rem;
+    margin: 200px auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #ebe9e9;
+    box-shadow: 3px 3px 3px #123456;
+    position: relative;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px 0;
+    align-items: center;
+}
+
+h1 {
+    color: #123456;
+}
+
+h3 {
+    color: #8787f0;
+}
+
+div {
+    display: flex;
+    gap: 12px;
+}
+
+p {
+    font-size: 25px;
+    font-family: sans-serif;
+    color: #123456
+}
+
+input, select {
+    padding: 5px 15px;
+    border: 1px solid #123456;
+    border-radius: 6px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #123456;
+    font-size: 20px;
+}
+
+select option {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+footer {
+    font-weight: bold;
+    align-self: center;
+    margin: 20px 0;
+    font-size: 20px;
+    color: #8787f0;
+}
+
+button {
+    padding: 4px 7px;
+    color: #f0f0f0;
+    width: 100px;
+    align-self: center;
+    border-radius: 6px;
+    background-color: #123456;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: opacity 0.2s ease-in-out;
+    position: absolute;
+    bottom: 40px;
+}
+
+button:hover {
+    opacity: 1;
+}
