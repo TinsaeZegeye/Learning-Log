@@ -1,0 +1,153 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== GLOBAL ===== */
+body {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+}
+
+/* ===== LAYOUT ===== */
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ===== HEADER ===== */
+.app-header {
+  grid-column: span 2;
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: 50px;
+  color: #ffa94d;
+}
+
+.app-header h5 {
+  color: #123456;
+}
+
+/* ===== FRIENDS SECTION ===== */
+.friends-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 1px solid #123456;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* ===== FRIEND LIST ===== */
+.friend-list {
+  list-style: none;
+}
+
+.friend-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px;
+  border: 1px solid #123459;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px #123456;
+  margin-bottom: 20px;
+  position: relative;
+  width: 35rem;
+}
+
+.selected {
+  background-color: #dac3a5;
+}
+
+.friend-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.friend-item h3 {
+  color: #123459;
+}
+
+.friend-item p {
+  color: #123456;
+}
+
+.friend-item button {
+  position: absolute;
+  right: 20px;
+  padding: 6px 10px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  background-color: #123459;
+  color: #ffa94d;
+  font-family: inherit;
+  font-size: 18px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.btn--right {
+  align-self: flex-end;
+}
+
+/* ===== FORMS ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px;
+  border: 1px solid #123456;
+  border-radius: 8px;
+}
+
+.form h3,
+.friends-panel h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #ffa94d;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===== INPUTS ===== */
+input,
+select {
+  font-size: 18px;
+  padding: 6px 10px;
+  border: none;
+  border-bottom: 4px solid #123456;
+  color: #123456;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}
+
+/* ===== SPLIT BILL ===== */
+.split-bill {
+  margin-left: 10px;
+}
