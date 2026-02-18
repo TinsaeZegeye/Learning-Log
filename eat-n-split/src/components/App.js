@@ -52,6 +52,7 @@ export default function App() {
           selected={selected}
           setSelected={setSelected}
           setFriends={setFriends}
+          key={selected.id}
         />
       )}
     </div>
