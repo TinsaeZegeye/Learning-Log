@@ -15,7 +15,10 @@ function App() {
 
   function handleSearch(e) {
     e.preventDefault();
-    if (city.length < 3) {
+
+    if (city.length > 2) {
+      fetchData(city);
+    } else {
       setError("City Name must be at least 3 characters!");
       return;
     }
@@ -23,34 +26,33 @@ function App() {
     setError("");
   }
 
-  useEffect(() => {
-    async function fetchData(cityName) {
-      try {
-        setLoading(true);
-        setError("");
+  async function fetchData(cityName) {
+    try {
+      setLoading(true);
+      setError("");
 
-        const res = await fetch(
-          `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${cityName}`,
-        );
+      const res = await fetch(
+        `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${cityName}`,
+      );
 
-        if (!res.ok) throw new Error("Something happen while fetching data");
+      if (!res.ok) throw new Error("Something happen while fetching data");
 
-        const result = await res.json();
-        setData(result);
-      } catch (err) {
+      const result = await res.json();
+      setData(result);
+      setError("");
+    } catch (err) {
+      if (err.name !== "AbortError") {
         setError(err?.message || "City not found!");
         setData({});
-      } finally {
-        setLoading(false);
       }
+    } finally {
+      setLoading(false);
     }
+  }
 
-    if (city) {
-      fetchData(city);
-    } else {
-      fetchData("Addis Ababa");
-    }
-  }, [city]);
+  useEffect(() => {
+    fetchData("Addis Ababa");
+  }, []);
 
   return (
     <div className="App">
