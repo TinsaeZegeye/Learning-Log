@@ -5,7 +5,6 @@ function HabitForm({ addHabit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!input.trim()) return;
 
     addHabit(input);
