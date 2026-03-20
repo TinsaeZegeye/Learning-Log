@@ -1,10 +1,11 @@
-// Test ID: IIDSAT
-
+import { getOrder } from '../../services/apiRestaurant'
 import {
   calcMinutesLeft,
   formatCurrency,
   formatDate,
 } from '../../utils/helpers'
+
+import OrderItem from './OrderItem'
 
 const order = {
   id: 'ABCDEF',
@@ -82,7 +83,7 @@ function Order() {
         </p>
       </div>
 
-      <ul className="divide-y divide-stone-300 border-t border-b">
+      <ul className="divide-y divide-stone-400 border-t border-b border-stone-400">
         {cart.map((order) => (
           <OrderItem item={order} key={order.id} />
         ))}

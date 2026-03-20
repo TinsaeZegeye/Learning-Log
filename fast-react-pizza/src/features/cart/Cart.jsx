@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux'
 import Button from '../../ui/Button'
 import ButtonLink from '../../ui/ButtonLink'
 import CartItem from './CartItem'
@@ -28,12 +29,13 @@ const fakeCart = [
 
 function Cart() {
   const cart = fakeCart
+  const username = useSelector((state) => state.user.username)
 
   return (
     <div className="m-4">
       <ButtonLink to="/menu">&larr; Back to menu</ButtonLink>
 
-      <h2 className="mt-6 mb-3 text-xl font-bold">Your cart, %NAME%</h2>
+      <h2 className="mt-6 mb-3 text-xl font-bold">Your cart, {username}</h2>
 
       <ul className="my-3 divide-y divide-stone-400 border-b border-stone-400">
         {cart.map((item) => (
@@ -41,7 +43,7 @@ function Cart() {
         ))}
       </ul>
 
-      <div className="flex justify-center gap-6">
+      <div className="space-x-5">
         <Button type="primary" to="/order/new">
           Order Pizzas
         </Button>
