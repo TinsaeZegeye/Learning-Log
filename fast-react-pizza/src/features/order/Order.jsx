@@ -1,4 +1,3 @@
-import { getOrder } from '../../services/apiRestaurant'
 import {
   calcMinutesLeft,
   formatCurrency,
