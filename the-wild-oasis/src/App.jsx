@@ -1,51 +1,32 @@
-import styled from "styled-components";
+import { BrowserRouter, Navigate, Routes, Route } from "react-router";
+
 import GlobalStyles from "./styles/GlobalStyles";
-import Button from "./ui/Button";
-import Input from "./ui/Input";
-import Heading from "./ui/Heading";
-
-const StyledApp = styled.div`
-  background-color: orange;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+import Dashboard from "./pages/Dashboard";
+import Bookings from "./pages/Bookings";
+import Cabins from "./pages/Cabins";
+import Users from "./pages/Users";
+import Settings from "./pages/Settings";
+import Account from "./pages/Account";
+import Login from "./pages/Login";
+import PageNotFound from "./pages/PageNotFound";
 
 export default function App() {
   return (
     <>
       <GlobalStyles />
-      <StyledApp>
-        <Heading as="h1">The Wild Oasis</Heading>
-
-        <Heading as="h2">Form</Heading>
-        <Input type="text" placeholder="Enter number of guests" />
-
-        <Heading as="h3">Check in and out</Heading>
-        <ButtonContainer>
-          <Button
-            size="medium"
-            variation="primary"
-            onclick={() => alert("Check In Clicked")}
-          >
-            Check in
-          </Button>
-          <Button
-            size="small"
-            variation="secondary"
-            onclick={() => alert("Check Out Clicked")}
-          >
-            Checkout
-          </Button>
-        </ButtonContainer>
-      </StyledApp>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Navigate replace to="dashboard" />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="bookings" element={<Bookings />} />
+          <Route path="cabins" element={<Cabins />} />
+          <Route path="users" element={<Users />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="account" element={<Account />} />
+          <Route path="login" element={<Login />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
